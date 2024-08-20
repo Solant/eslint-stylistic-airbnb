@@ -1,8 +1,15 @@
 {
   "name": "eslint-stylistic-airbnb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Airbnb config for eslint using stylistic plugin",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Solant/eslint-stylistic-airbnb"
+  },
+  "bugs": {
+    "url": "https://github.com/Solant/eslint-stylistic-airbnb/issues"
+  },
   "keywords": [
     "eslint",
     "stylistic",
@@ -13,7 +20,6 @@
     "index.js",
     "rules"
   ],
-  "author": "",
   "license": "MIT",
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
   "dependencies": {
