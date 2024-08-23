@@ -43,13 +43,17 @@ module.exports = {
 
     // require trailing commas in multiline object literals
     // https://eslint.org/docs/rules/comma-dangle
-    // https://eslint.style/rules/js/comma-dangle
+    // https://eslint.style/rules/default/comma-dangle
     '@stylistic/comma-dangle': ['error', {
       arrays: 'always-multiline',
       objects: 'always-multiline',
       imports: 'always-multiline',
       exports: 'always-multiline',
       functions: 'always-multiline',
+      // ts specific values https://eslint.style/rules/default/comma-dangle#ts-comma-dangle
+      enums: 'always-multiline',
+      generics: 'always-multiline',
+      tuples: 'always-multiline',
     }],
 
     // enforce spacing before and after comma
