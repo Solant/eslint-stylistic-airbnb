@@ -13,12 +13,13 @@ npm install -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb
 Add following to your eslint config:
 
 ```javascript
-// Flat config eslint.config.mjs
+// Flat config
+// eslint.config.mjs
 import stylistic from '@stylistic/eslint-plugin';
 import airbnb from 'eslint-stylistic-airbnb';
 
 export default [
-  ...airbnb,
+  airbnb,
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     plugins: {
@@ -27,6 +28,22 @@ export default [
   },
 ];
 ```
+
+```javascript
+// Legacy config
+// .eslintrc.js
+module.exports = {
+  plugins: ['@stylistic'],
+  rules: {
+    ...require('eslint-stylistic-airbnb').rules,
+  },
+  parserOptions: {
+    ecmaVersion: 'latest',
+  },
+};
+```
+
+# TypeScript
 
 If you use typescript, install additional dependency:
 
@@ -37,13 +54,14 @@ npm install -D typescript-eslint
 And add following to your eslint config:
 
 ```javascript
-// Flat config eslint.config.mjs
+// Flat config
+// eslint.config.mjs
 import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import airbnb from 'eslint-stylistic-airbnb';
 
 export default [
-  ...airbnb,
+  airbnb,
   ...tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
@@ -52,6 +70,21 @@ export default [
     },
   },
 ];
+```
+
+```javascript
+// Legacy config
+// .eslintrc.js
+module.exports = {
+  plugins: [
+    '@typescript-eslint',
+    '@stylistic',
+  ],
+  parser: '@typescript-eslint/parser',
+  rules: {
+    ...require('eslint-stylistic-airbnb').rules, 
+  },
+};
 ```
 
 # Notes
