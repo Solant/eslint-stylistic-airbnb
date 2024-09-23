@@ -1,6 +1,6 @@
 {
   "name": "eslint-stylistic-airbnb",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Airbnb config for eslint using stylistic plugin",
   "main": "index.js",
   "repository": {
