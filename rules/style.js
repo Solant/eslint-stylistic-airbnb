@@ -101,7 +101,7 @@ module.exports = {
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
     // https://eslint.style/rules/default/func-call-spacing
-    '@stylistic/func-call-spacing': ['error', 'never'],
+    '@stylistic/function-call-spacing': ['error', 'never'],
 
     // requires function names to match the name of the variable or property to which they are
     // assigned
