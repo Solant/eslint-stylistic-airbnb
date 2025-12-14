@@ -3,6 +3,7 @@
   "version": "2.0.1",
   "description": "Airbnb config for eslint using stylistic plugin",
   "main": "index.js",
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Solant/eslint-stylistic-airbnb"
@@ -18,6 +19,8 @@
   ],
   "files": [
     "index.js",
+    "index.d.ts",
+    "configs",
     "rules"
   ],
   "license": "MIT",
