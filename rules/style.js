@@ -215,11 +215,14 @@ module.exports = {
     // require or disallow newlines around directives
     // https://eslint.org/docs/rules/lines-around-directive
     // https://eslint.style/rules/js/padding-line-between-statements
-    // TODO: fix me
     // 'lines-around-directive': ['error', {
     //   before: 'always',
     //   after: 'always',
     // }],
+    '@stylistic/padding-line-between-statements': ['error',
+      { blankLine: 'always', prev: '*', next: 'directive' },
+      { blankLine: 'always', prev: 'directive', next: '*' }
+    ],
 
     // Require or disallow logical assignment logical operator shorthand
     // https://eslint.org/docs/latest/rules/logical-assignment-operators
@@ -475,7 +478,7 @@ module.exports = {
 
     // Require or disallow padding lines between statements
     // https://eslint.org/docs/rules/padding-line-between-statements
-    '@stylistic/padding-line-between-statements': 'off',
+    // '@stylistic/padding-line-between-statements': 'off',
 
     // Disallow the use of Math.pow in favor of the ** operator
     // https://eslint.org/docs/rules/prefer-exponentiation-operator

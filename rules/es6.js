@@ -23,7 +23,7 @@ module.exports = {
 
     // enforce the spacing around the * in generator functions
     // https://eslint.org/docs/rules/generator-star-spacing
-    // https://eslint.style/rules/default/arrow-spacing
+    // https://eslint.style/rules/generator-star-spacing
     '@stylistic/generator-star-spacing': ['error', { before: false, after: true }],
 
     // disallow modifying variables of class declarations
@@ -53,7 +53,7 @@ module.exports = {
 
     // disallow symbol constructor
     // https://eslint.org/docs/rules/no-new-symbol
-    // https://eslint.org/docs/rules/no-new-symbol/no-new-native-nonconstructor
+    // https://eslint.org/docs/latest/rules/no-new-native-nonconstructor
     'no-new-native-nonconstructor': 'error',
 
     // Disallow specified names in exports
@@ -103,12 +103,14 @@ module.exports = {
     }],
 
     // suggest using arrow functions as callbacks
+    // https://eslint.org/docs/latest/rules/prefer-arrow-callback
     'prefer-arrow-callback': ['error', {
       allowNamedFunctions: false,
       allowUnboundThis: true,
     }],
 
     // suggest using of const declaration for variables that are never modified after declared
+    // https://eslint.org/docs/latest/rules/prefer-const
     'prefer-const': ['error', {
       destructuring: 'any',
       ignoreReadBeforeAssign: true,
@@ -135,7 +137,7 @@ module.exports = {
 
     // suggest using Reflect methods where applicable
     // https://eslint.org/docs/rules/prefer-reflect
-    'prefer-reflect': 'off',
+    // 'prefer-reflect': 'off',
 
     // use rest parameters instead of arguments
     // https://eslint.org/docs/rules/prefer-rest-params
