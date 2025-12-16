@@ -30,6 +30,7 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.0",
-    "@stylistic/eslint-plugin": ">=2.0.0"
+    "@stylistic/eslint-plugin": ">=2.0.0",
+    "eslint-plugin-react": "^7.36.1"
   }
 }
