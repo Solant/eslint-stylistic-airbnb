@@ -5,5 +5,7 @@ module.exports = {
     'flat/compat': require('./configs/flat/compat'),
     'flat/recommended': require('./configs/flat/recommended'),
     'flat/strict': require('./configs/flat/strict'),
+    'flat/addon-iterators': require('./configs/flat/addon-iterators'),
+    'flat/addon-jsx': require('./configs/flat/addon-jsx'),
   },
 };
