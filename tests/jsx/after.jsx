@@ -21,7 +21,3 @@ function HelloWorld({
     </div>
   );
 }
-
-export function Wrapper() {
-  return <HelloWorld silent> </HelloWorld>;
-}
