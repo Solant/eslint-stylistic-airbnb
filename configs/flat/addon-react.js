@@ -4,11 +4,6 @@
 
 module.exports = {
   name: 'airbnb:addon-react',
-  plugins: {
-    get ['react']() {
-      return require('eslint-plugin-react');
-    },
-  },
   rules: {
     'class-methods-use-this': ['error', {
       exceptMethods: [

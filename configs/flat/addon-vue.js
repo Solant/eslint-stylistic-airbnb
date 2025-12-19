@@ -2,11 +2,6 @@
 
 module.exports = {
   name: 'airbnb:addon-vue',
-  plugins: {
-    get ['vue']() {
-      return require('eslint-plugin-vue');
-    },
-  },
   rules: {
     // blocks
     'vue/block-order': ['error', {
