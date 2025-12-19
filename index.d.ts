@@ -8,6 +8,7 @@ declare const airbnb: {
     'flat/addon-iterators': Linter.Config;
     'flat/addon-jsx': Linter.Config;
     'flat/addon-react': Linter.Config;
+    'flag/addon-vue': Linter.Config;
   };
 };
 

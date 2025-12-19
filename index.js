@@ -8,5 +8,6 @@ module.exports = {
     'flat/addon-iterators': require('./configs/flat/addon-iterators'),
     'flat/addon-jsx': require('./configs/flat/addon-jsx'),
     'flat/addon-react': require('./configs/flat/addon-react'),
+    'flat/addon-vue': require('./configs/flat/addon-vue'),
   },
 };
