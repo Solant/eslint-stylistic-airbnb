@@ -2,6 +2,9 @@
 
 module.exports = {
   configs: {
+    compat: require('./configs/compat'),
+    recommended: require('./configs/recommended'),
+    strict: require('./configs/strict'),
     'flat/compat': require('./configs/flat/compat'),
     'flat/recommended': require('./configs/flat/recommended'),
     'flat/strict': require('./configs/flat/strict'),

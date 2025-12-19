@@ -2,6 +2,9 @@ import type { Linter } from 'eslint';
 
 declare const airbnb: {
   configs: {
+    compat: Linter.LegacyConfig,
+    recommended: Linter.LegacyConfig,
+    strict: Linter.LegacyConfig,
     'flat/compat': Linter.Config;
     'flat/recommended': Linter.Config;
     'flat/strict': Linter.Config;
