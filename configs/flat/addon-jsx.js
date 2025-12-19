@@ -25,6 +25,7 @@ module.exports = {
       prop: 'parens-new-line',
     }],
     '@stylistic/jsx-self-closing-comp': 'error',
+    // deprecated, but still needed for a proper formatting
     '@stylistic/jsx-indent': ['error', 2],
     '@stylistic/jsx-indent-props': ['error', 2],
     '@stylistic/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
@@ -38,7 +39,6 @@ module.exports = {
     }],
     '@stylistic/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-    '@stylistic/jsx-props-no-multi-spaces': 'error',
     '@stylistic/jsx-curly-newline': ['error', {
       multiline: 'consistent',
       singleline: 'consistent',
