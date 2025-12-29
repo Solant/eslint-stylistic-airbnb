@@ -22,6 +22,14 @@ module.exports = {
     'vue/no-useless-v-bind': 'error',
 
     'vue/no-static-inline-styles': 'error',
+    'vue/no-unused-properties': 'error',
+    'vue/no-unused-refs': 'error',
+    'vue/block-tag-newline': ['error', { singleline: 'always', multiline: 'always' }],
+    'vue/define-macros-order': 'error',
+    'vue/html-comment-content-newline': ['error', 'always'],
+    'vue/prefer-separate-static-class': ['error'],
+    'vue/no-template-target-blank': 'error',
+    'vue/no-potential-component-option-typo': 'error',
 
     // boolean props
     'vue/prefer-true-attribute-shorthand': ['error', 'always'],
