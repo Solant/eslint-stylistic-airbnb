@@ -1,4 +1,3 @@
-import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,8 +13,7 @@ test('react', async () => {
     fix: true,
   });
 
-  const code = await readFile(join(__dirname, 'before.jsx'), { encoding: 'utf-8' });
-  const results = await eslint.lintText(code);
+  const results = await eslint.lintFiles(['before.jsx']);
 
   await expect(results[0].output).toMatchFileSnapshot('after.jsx');
 })
