@@ -1,69 +1,3 @@
-<template>
-  <div class="page-root">
-    <MyCard
-      Title="Main   Card"
-      :is-active="true"
-      data-id=" 99 "
-    >
-      <template #header>
-        <UserAvatar
-          user-name="John"
-          :SIZE=" 64 "
-          rounded
-        />
-      </template>
-
-      <ContentBlock
-        :text=" message "
-        align=" center"
-      >
-        <CustomInput
-          v-model="formData.name"
-          placeholder=" Enter   name "
-        />
-        <CustomInput
-          v-model="formData.email"
-          TYPE="email"
-          PLACEHOLDER=" Email   address "
-        />
-
-        <StatusBadge
-          :Visible="hasErrors"
-          status=" error "
-        />
-      </ContentBlock>
-
-      <ActionRow
-        :Primary="true"
-        justify="space-between"
-      >
-        <PrimaryButton
-          :Disabled=" isLoading "
-          @click="submitForm"
-        >
-          Submit
-        </PrimaryButton>
-
-        <secondary-button
-          size=" small "
-          @click="resetForm"
-        >
-          reset
-        </secondary-button>
-      </ActionRow>
-    </MyCard>
-
-    <mycard
-      Title="Secondary card"
-      :is-active="false"
-    >
-      <contentblock text=" Another    block ">
-        <span class="text-muted"> Some   inline   text </span>
-      </contentblock>
-    </mycard>
-  </div>
-</template>
-
 <script setup>
 import {
   ref, reactive, computed, watch, onMounted,
@@ -137,5 +71,70 @@ onMounted(() => {
     console.log('Admin    mode   enabled');
   }
 });
-
 </script>
+
+<template>
+  <div class="page-root">
+    <MyCard
+      Title="Main   Card"
+      :is-active="true"
+      data-id=" 99 "
+    >
+      <template #header>
+        <UserAvatar
+          user-name="John"
+          :SIZE=" 64 "
+          rounded
+        />
+      </template>
+
+      <ContentBlock
+        :text=" message "
+        align=" center"
+      >
+        <CustomInput
+          v-model="formData.name"
+          placeholder=" Enter   name "
+        />
+        <CustomInput
+          v-model="formData.email"
+          TYPE="email"
+          PLACEHOLDER=" Email   address "
+        />
+
+        <StatusBadge
+          :Visible="hasErrors"
+          status=" error "
+        />
+      </ContentBlock>
+
+      <ActionRow
+        :Primary="true"
+        justify="space-between"
+      >
+        <PrimaryButton
+          :Disabled=" isLoading "
+          @click="submitForm"
+        >
+          Submit
+        </PrimaryButton>
+
+        <secondary-button
+          size=" small "
+          @click="resetForm"
+        >
+          reset
+        </secondary-button>
+      </ActionRow>
+    </MyCard>
+
+    <mycard
+      Title="Secondary card"
+      :is-active="false"
+    >
+      <contentblock text=" Another    block ">
+        <span class="text-muted"> Some   inline   text </span>
+      </contentblock>
+    </mycard>
+  </div>
+</template>

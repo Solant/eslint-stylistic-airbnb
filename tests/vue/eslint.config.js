@@ -5,4 +5,5 @@ export default [
   { files: ['**/*.{js,jsx,vue}'] },
   ...vue.configs['flat/recommended'],
   airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-vue'],
 ];
