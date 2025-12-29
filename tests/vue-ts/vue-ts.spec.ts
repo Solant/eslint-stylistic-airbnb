@@ -15,7 +15,5 @@ test('vue-ts', async () => {
 
   const results = await eslint.lintFiles(['before.vue']);
 
-  console.log(results[0]);
-
   await expect(results[0].output).toMatchFileSnapshot('after.vue');
 })
