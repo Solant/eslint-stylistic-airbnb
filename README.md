@@ -3,7 +3,7 @@
 ![NPM Downloads](https://img.shields.io/npm/dm/eslint-stylistic-airbnb)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A modern Airbnb ESLint config with the original formatting rules using `eslint-stylistic-plugin`.
+A modern Airbnb ESLint config with the original formatting rules using [ESLint Stylistic](https://eslint.style/).
 
 ## Table of Contents
 
@@ -23,14 +23,19 @@ A modern Airbnb ESLint config with the original formatting rules using `eslint-s
 
 ## Features
 
-✨ **Modern & Maintained** - Updated for ESLint 9+ with no deprecated rules or plugins  
-🎨 **Formatting Included** - Uses `@stylistic/eslint-plugin` instead of Prettier  
-📦 **Multiple Formats** - Supports both flat config and legacy `.eslintrc`  
-🔷 **TypeScript Ready** - Built-in TypeScript support and type-based rules  
-⚛️ **Framework Support** - Dedicated configs for React and Vue.js  
-🎯 **Flexible** - Choose from recommended, strict, or compatibility modes  
-🔧 **Customizable** - Easy to override rules while maintaining the base style  
-📚 **Well Documented** - Comprehensive guides for migration and troubleshooting
+✨ **Modern & Maintained** - Updated for ESLint 9+ with no deprecated rules or plugins
+
+🎨 **Formatting Included** - Uses [ESLint Stylistic](https://eslint.style/) instead of Prettier
+
+📦 **Multiple Formats** - Supports both flat config and legacy `.eslintrc`
+
+🔷 **TypeScript Ready** - Built-in TypeScript support
+
+⚛️ **Framework Support** - Dedicated configs for JSX-based frameworks, React and Vue.js
+
+🎯 **Flexible** - Choose from recommended, strict, or compatibility modes
+
+🔧 **Customizable** - Easy to override rules while maintaining the base style
 
 ## Why
 
@@ -43,7 +48,7 @@ The original `eslint-config-airbnb` is not updated for a long time now, has comp
 - TypeScript support
 - Additional airbnb-inspired configs for other frameworks (JSX-based and Vue)
 
-Big part of Airbnb codestyle are the formatting rules, so in order to follow airbnb codestyle as close as possible this config uses `eslint-stylistic-plugin` instead of `prettier`. Here is also a good article on this topic: [why not prettier](https://antfu.me/posts/why-not-prettier).
+Big part of Airbnb codestyle are the formatting rules, so in order to follow airbnb codestyle as close as possible this config uses [ESLint Stylistic](https://eslint.style/) instead of `prettier`. Here is also a good article on this topic: [why not prettier](https://antfu.me/posts/why-not-prettier).
 
 ## Prerequisites
 
@@ -85,6 +90,18 @@ export default [
 ];
 ```
 
+**TypeScript:**
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import tseslint from 'typescript-eslint';
+
+export default [
+  ...tseslint.configs.recommended,
+  airbnb.configs['flat/recommended'],
+];
+```
+
 **React + JavaScript:**
 ```javascript
 // eslint.config.js
@@ -101,6 +118,24 @@ export default [
 ];
 ```
 
+**React + TypeScript:**
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+
+export default [
+  ...tseslint.configs.recommended,
+  airbnb.configs['flat/recommended'],
+  react.configs.flat.recommended,
+  reactHooks.configs.recommended,
+  airbnb.configs['flat/jsx'],
+  airbnb.configs['flat/react'],
+];
+```
+
 **Vue + JavaScript:**
 ```javascript
 // eslint.config.js
@@ -108,6 +143,21 @@ import airbnb from 'eslint-stylistic-airbnb';
 import pluginVue from 'eslint-plugin-vue';
 
 export default [
+  ...pluginVue.configs['flat/recommended'],
+  airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/vue'],
+];
+```
+
+**Vue + TypeScript:**
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import pluginVue from 'eslint-plugin-vue';
+import tseslint from 'typescript-eslint';
+
+export default [
+  ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/vue'],
@@ -144,26 +194,13 @@ Choose **one** of these as your foundation:
 
 |Config ID (Flat)|Config ID (Legacy)|Best For|Description|
 |-|-|-|-|
-|`flat/recommended`<br/>**(Default)**|`recommended`| New projects or gradual migration | All core Airbnb style rules: 2-space indentation, semicolons, trailing commas, single quotes, arrow functions, const/let over var, prefer-destructuring. Includes modern rules (`prefer-object-has-own`, `no-constant-binary-expression`) and TypeScript member delimiters. |
+|`flat/recommended`|`recommended`| New projects or gradual migration | All core Airbnb style rules: 2-space indentation, semicolons, trailing commas, single quotes, const/let over var, prefer-destructuring. Includes modern rules (`prefer-object-has-own`, `no-constant-binary-expression`) and TypeScript member delimiters. |
 |`flat/strict`|`strict` | Maximum consistency enforcement | Everything in `recommended` **plus** stricter rules: disallows single-line ternaries, enforces function expressions over declarations, requires comments above code (not inline). ⚠️ May require refactoring. |
 |`flat/compat`|`compat` | Upgrading from v1.x | Backward-compatible with previous package versions. Use when migrating to preserve existing behavior before adopting new rules. |
-
-For example:
-
-```javascript
-// eslint.config.js
-import airbnb from 'eslint-stylistic-airbnb';
-
-export default [
-  airbnb.configs['flat/recommended'],
-];
-```
 
 ### Addon configs
 
 Add **any combination** of these to extend base configs:
-
-> **Note:** Addon configs are only available for flat config format. For legacy `.eslintrc` format, you'll need to configure these features manually or use the base configs with appropriate plugin configurations.
 
 |Addon ID (Flat)|Dependencies|Description|
 |-|-|-|
@@ -172,28 +209,6 @@ Add **any combination** of these to extend base configs:
 |`flat/react` | `eslint-plugin-react` | React component rules: prop types validation, no deprecated APIs, component method ordering, lifecycle conventions, no array index keys, destructured props, function component style. |
 |`flat/vue` | `eslint-plugin-vue` | Vue 3 SFC conventions: block order (script/template/style), PascalCase naming, no useless mustaches/v-bind, boolean prop shorthand, separate static classes. |
 |`flat/vue-ts` | `eslint-plugin-vue`<br/>`typescript-eslint` | TypeScript in Vue: enforces `<script lang="ts">` and type-based prop definitions. Sets up TS parser for Vue files. |
-
-For example:
-
-```javascript
-// eslint.config.js
-import airbnb from 'eslint-stylistic-airbnb';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-
-export default [
-  // 1. The Core Config
-  airbnb.configs['flat/recommended'],
-
-  // 2. React recommended config
-  react.configs.flat.recommended,
-  reactHooks.configs.flat.recommended,
-  
-  // 3. React airbnb style
-  airbnb.configs['flat/jsx'],
-  airbnb.configs['flat/react'],
-];
-```
 
 ## Customizing Rules
 
@@ -322,7 +337,7 @@ export default [
 
 ### Should I use this instead of Prettier?
 
-Yes! This config provides formatting through ESLint rules using `@stylistic/eslint-plugin`, which gives you more control and better integration with your linting workflow. See [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier) for more context.
+Yes! This config provides formatting through ESLint rules using [ESLint Stylistic](https://eslint.style/), which more closely matches the original styleguide and provides better integration with your linting workflow. See [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier) for more context.
 
 ### Can I use this with TypeScript?
 
