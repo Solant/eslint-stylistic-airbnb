@@ -247,7 +247,7 @@ module.exports = {
 
 ## TypeScript Support
 
-This config works with TypeScript out of the box. For TypeScript projects, you'll need to configure the parser:
+This config works with TypeScript out of the box. For TypeScript projects, you'll need to configure the parser, the preferred way is to use `typescript-eslint` config:
 
 **Flat Config:**
 ```javascript
@@ -346,8 +346,8 @@ Absolutely! This config works with TypeScript out of the box. See the [TypeScrip
 ### Which base config should I choose?
 
 - **`flat/recommended`** - Best for most projects. Includes all essential Airbnb rules with modern additions.
-- **`flat/strict`** - For teams that want maximum consistency and are willing to refactor code.
-- **`flat/compat`** - Only if migrating from v1.x of this package.
+- **`flat/strict`** - If you want to follow styleguide more closely and if you are willing to refactor code to meet stricter formatting rules.
+- **`flat/compat`** - Only if migrating from v2.x of this package.
 
 ### Do I need to install React/Vue plugins?
 
@@ -355,7 +355,7 @@ Only if you're using the React or Vue addons. The base config works standalone f
 
 ### Why do I get "plugin not found" errors?
 
-Make sure you've installed the peer dependencies for any addon configs you're using. See [Installation](#installation) for the complete list.
+Make sure you've installed the peer dependencies for any addon configs you're using. See [Configuration Reference](#configuration-reference) for the complete list of optional dependencies.
 
 ### Can I override specific rules?
 
