@@ -13,6 +13,7 @@ declare const airbnb: {
     'flat/addon-react': Linter.Config;
     'flat/addon-vue': Linter.Config;
     'flat/addon-vue-ts': Linter.Config;
+    'flat/addon-import': Linter.Config;
   };
 };
 
