@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v3.0.0-rc.1
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v2.0.1...v3.0.0-rc.1)
+
+### 🚀 Enhancements
+
+- ⚠️  Implement new modular config structure ([99053ba](https://github.com/Solant/eslint-stylistic-airbnb/commit/99053ba))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Implement new modular config structure ([99053ba](https://github.com/Solant/eslint-stylistic-airbnb/commit/99053ba))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v2.0.1
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v2.0.0...v2.0.1)
