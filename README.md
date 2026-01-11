@@ -192,7 +192,7 @@ module.exports = {
 
 Choose **one** of these as your foundation:
 
-|Config ID (Flat)|Config ID (Legacy)|Best For|Description|
+|Config|Config ID (Legacy)|Best For|Description|
 |-|-|-|-|
 |`flat/recommended`|`recommended`| New projects or gradual migration | All core Airbnb style rules: 2-space indentation, semicolons, trailing commas, single quotes, const/let over var, prefer-destructuring. Includes modern rules (`prefer-object-has-own`, `no-constant-binary-expression`) and TypeScript member delimiters. |
 |`flat/strict`|`strict` | Maximum consistency enforcement | Everything in `recommended` **plus** stricter rules: disallows single-line ternaries, enforces function expressions over declarations, requires comments above code (not inline). ⚠️ May require refactoring. |
@@ -202,13 +202,14 @@ Choose **one** of these as your foundation:
 
 Add **any combination** of these to extend base configs:
 
-|Addon ID (Flat)|Dependencies|Description|
+|Config|Dependencies|Description|
 |-|-|-|
-|`flat/jsx`| None | JSX/TSX formatting for React/Preact/Solid: PascalCase components, double quotes, 2-space indentation, self-closing tags, multiline wrapped in parens, one prop per line (multiline). |
-|`flat/iterators`| None | Relaxes iterator restrictions: allows `for...of` loops. Still disallows `for...in`, `with` statements, and labeled statements. |
-|`flat/react` | `eslint-plugin-react` | React component rules: prop types validation, no deprecated APIs, component method ordering, lifecycle conventions, no array index keys, destructured props, function component style. |
-|`flat/vue` | `eslint-plugin-vue` | Vue 3 SFC conventions: block order (script/template/style), PascalCase naming, no useless mustaches/v-bind, boolean prop shorthand, separate static classes. |
-|`flat/vue-ts` | `eslint-plugin-vue`<br/>`typescript-eslint` | TypeScript in Vue: enforces `<script lang="ts">` and type-based prop definitions. Sets up TS parser for Vue files. |
+|`flat/addon-jsx`| None | JSX/TSX formatting for React/Preact/Solid: PascalCase components, double quotes, 2-space indentation, self-closing tags, multiline wrapped in parens, one prop per line (multiline). |
+|`flat/addoniterators`| None | Relaxes iterator restrictions: allows `for...of` loops. Still disallows `for...in`, `with` statements, and labeled statements. |
+|`flat/addon-react` | `eslint-plugin-react` | React component rules: prop types validation, no deprecated APIs, component method ordering, lifecycle conventions, no array index keys, destructured props, function component style. |
+|`flat/addon-vue` | `eslint-plugin-vue` | Vue 3 SFC conventions: block order (script/template/style), PascalCase naming, no useless mustaches/v-bind, boolean prop shorthand, separate static classes. |
+|`flat/addon-vue-ts` | `eslint-plugin-vue`<br/>`typescript-eslint` | TypeScript in Vue: enforces `<script lang="ts">` and type-based prop definitions. Sets up TS parser for Vue files. |
+| `flat/addon-import` | `eslint-plugin-import-x` | 🛠️ WIP 🛠️ Adds import-related rules |
 
 ## Customizing Rules
 
