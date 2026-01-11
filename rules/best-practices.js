@@ -136,7 +136,8 @@ module.exports = {
 
     // disallow the use of leading or trailing decimal points in numeric literals
     // https://eslint.org/docs/rules/no-floating-decimal
-    'no-floating-decimal': 'error',
+    // https://eslint.style/rules/no-floating-decimal
+    '@stylistic/no-floating-decimal': 'error',
 
     // disallow reassignments of native objects or read-only globals
     // https://eslint.org/docs/rules/no-global-assign
@@ -144,7 +145,7 @@ module.exports = {
 
     // deprecated in favor of no-global-assign
     // https://eslint.org/docs/rules/no-native-reassign
-    'no-native-reassign': 'off',
+    // 'no-native-reassign': 'off',
 
     // disallow implicit type conversions
     // https://eslint.org/docs/rules/no-implicit-coercion
@@ -157,6 +158,7 @@ module.exports = {
 
     // disallow var and named functions in global scope
     // https://eslint.org/docs/rules/no-implicit-globals
+    // https://github.com/airbnb/javascript/issues/1590
     'no-implicit-globals': 'off',
 
     // disallow use of eval()-like methods
@@ -194,7 +196,8 @@ module.exports = {
 
     // disallow use of multiple spaces
     // https://eslint.org/docs/rules/no-multi-spaces
-    'no-multi-spaces': ['error', {
+    // https://eslint.style/rules/no-multi-spaces
+    '@stylistic/no-multi-spaces': ['error', {
       ignoreEOLComments: false,
     }],
 
@@ -416,7 +419,8 @@ module.exports = {
 
     // require immediate function invocation to be wrapped in parentheses
     // https://eslint.org/docs/rules/wrap-iife.html
-    'wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
+    // https://eslint.style/rules/wrap-iife
+    '@stylistic/wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
 
     // require or disallow Yoda conditions
     // https://eslint.org/docs/rules/yoda
