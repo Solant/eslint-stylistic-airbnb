@@ -99,6 +99,7 @@ import tseslint from 'typescript-eslint';
 export default [
   ...tseslint.configs.recommended,
   airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-typescript'],
 ];
 ```
 
@@ -133,6 +134,7 @@ export default [
   reactHooks.configs.recommended,
   airbnb.configs['flat/jsx'],
   airbnb.configs['flat/react'],
+  airbnb.configs['flat/addon-typescript'],
 ];
 ```
 
@@ -161,6 +163,7 @@ export default [
   ...pluginVue.configs['flat/recommended'],
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/vue'],
+  airbnb.configs['flat/addon-typescript'],
 ];
 ```
 
@@ -204,6 +207,7 @@ Add **any combination** of these to extend base configs:
 
 |Config|Dependencies|Description|
 |-|-|-|
+|`flat/addon-typescript` | `typescript-eslint` | TypeScript-specific rule replacements: replaces base ESLint rules with TypeScript-aware versions for `no-shadow`, `no-unused-vars`, `no-use-before-define`, `no-useless-constructor`, `no-unused-expressions`, `prefer-destructuring`, and `prefer-promise-reject-errors` to prevent incorrect errors. |
 |`flat/addon-jsx`| None | JSX/TSX formatting for React/Preact/Solid: PascalCase components, double quotes, 2-space indentation, self-closing tags, multiline wrapped in parens, one prop per line (multiline). |
 |`flat/addoniterators`| None | Relaxes iterator restrictions: allows `for...of` loops. Still disallows `for...in`, `with` statements, and labeled statements. |
 |`flat/addon-react` | `eslint-plugin-react` | React component rules: prop types validation, no deprecated APIs, component method ordering, lifecycle conventions, no array index keys, destructured props, function component style. |
@@ -259,8 +263,11 @@ import tseslint from 'typescript-eslint';
 export default [
   ...tseslint.configs.recommended,
   airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-typescript'],
 ];
 ```
+
+Make sure to include `addon-typescript` to prevent incorrect errors in TypeScript files.
 
 ## Migration Guide
 
