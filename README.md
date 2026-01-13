@@ -366,6 +366,10 @@ Yes! See the [Customizing Rules](#customizing-rules) section for examples.
 
 Yes, ESLint 9 is fully supported using the flat config format.
 
+### Do I need to use a `recommended` config from `@eslint/js`?
+
+No, all recommended rules are already included in the base airbnb config. You don't need to add `@eslint/js` recommended preset separately.
+
 ### How do I migrate from `eslint-config-airbnb`?
 
 See the [Migration Guide](#migration-guide) for step-by-step instructions.
