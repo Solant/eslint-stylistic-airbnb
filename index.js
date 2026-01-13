@@ -14,5 +14,6 @@ module.exports = {
     'flat/addon-vue': require('./configs/flat/addon-vue'),
     'flat/addon-vue-ts': require('./configs/flat/addon-vue-ts'),
     'flat/addon-import': require('./configs/flat/addon-import'),
+    'flat/addon-typescript': require('./configs/flat/addon-typescript'),
   },
 };
