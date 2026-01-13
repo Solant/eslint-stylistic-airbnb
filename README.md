@@ -61,13 +61,13 @@ Install the core packages:
 
 ```bash
 # npm
-npm install -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb
+npm install -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 
 # pnpm
-pnpm add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb
+pnpm add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 
 # yarn
-yarn add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb
+yarn add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 ```
 
 ## Quickstart
@@ -84,9 +84,16 @@ You can either use flat `eslint.config.js` (recommended) or legacy `.eslintrc` (
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
+import globals from 'globals';
 
 export default [
   airbnb.configs['flat/recommended'],
+  
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
 ```
 
@@ -95,11 +102,19 @@ export default [
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 export default [
   ...tseslint.configs.recommended,
+
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-typescript'],
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
 ```
 
@@ -109,13 +124,21 @@ export default [
 import airbnb from 'eslint-stylistic-airbnb';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
 
 export default [
-  airbnb.configs['flat/recommended'],
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
-  airbnb.configs['flat/jsx'],
-  airbnb.configs['flat/react'],
+
+  airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-jsx'],
+  airbnb.configs['flat/addon-react'],
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
 ```
 
@@ -126,15 +149,23 @@ import airbnb from 'eslint-stylistic-airbnb';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 export default [
   ...tseslint.configs.recommended,
-  airbnb.configs['flat/recommended'],
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
-  airbnb.configs['flat/jsx'],
-  airbnb.configs['flat/react'],
+
+  airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-typescript'],
+  airbnb.configs['flat/addon-jsx'],
+  airbnb.configs['flat/addon-react'],
+  
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
 ```
 
@@ -143,11 +174,19 @@ export default [
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
 import pluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
 
 export default [
   ...pluginVue.configs['flat/recommended'],
+
   airbnb.configs['flat/recommended'],
-  airbnb.configs['flat/vue'],
+  airbnb.configs['flat/addon-vue'],
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  }
 ];
 ```
 
@@ -157,13 +196,21 @@ export default [
 import airbnb from 'eslint-stylistic-airbnb';
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 export default [
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
+
   airbnb.configs['flat/recommended'],
-  airbnb.configs['flat/vue'],
+  airbnb.configs['flat/addon-vue'],
   airbnb.configs['flat/addon-typescript'],
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
 ```
 
@@ -376,6 +423,28 @@ Yes, ESLint 9 is fully supported using the flat config format.
 ### Do I need to use a `recommended` config from `@eslint/js`?
 
 No, all recommended rules are already included in the base airbnb config. You don't need to add `@eslint/js` recommended preset separately.
+
+### Why do I have `no-undef` errors?
+
+Make sure to specify globals via the `languageOptions.globals` property in your flat config. For example, to enable browser globals:
+
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import globals from 'globals';
+
+export default [
+  airbnb.configs['flat/recommended'],
+  
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
+];
+```
+
+You can also combine multiple environments: `{ ...globals.browser, ...globals.node }`. See the [globals package](https://www.npmjs.com/package/globals) for available options.
 
 ### How do I migrate from `eslint-config-airbnb`?
 
