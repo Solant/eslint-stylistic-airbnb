@@ -28,27 +28,5 @@ module.exports = {
       allowTernary: false,
       allowTaggedTemplates: false,
     }],
-
-    'prefer-destructuring': 'off',
-    '@typescript-eslint/prefer-destructuring': ['error', {
-      VariableDeclarator: {
-        array: false,
-        object: true,
-      },
-      AssignmentExpression: {
-        array: true,
-        object: false,
-      },
-    }, {
-        enforceForRenamedProperties: false,
-        enforceForDeclarationWithTypeAnnotation: false,
-      }],
-
-    'prefer-promise-reject-errors': 'off',
-    '@typescript-eslint/prefer-promise-reject-errors': ['error', {
-      allowEmptyReject: true,
-      allowThrowingAny: false,
-      allowThrowingUnknown: false,
-    }],
   },
 };
