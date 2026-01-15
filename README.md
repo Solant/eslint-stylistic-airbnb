@@ -261,6 +261,7 @@ Add **any combination** of these to extend base configs:
 |`flat/addon-vue` | `eslint-plugin-vue` | Vue 3 SFC conventions: block order (script/template/style), PascalCase naming, no useless mustaches/v-bind, boolean prop shorthand, separate static classes. |
 |`flat/addon-vue-ts` | `eslint-plugin-vue`<br/>`typescript-eslint` | TypeScript in Vue: enforces `<script lang="ts">` and type-based prop definitions. Sets up TS parser for Vue files. |
 | `flat/addon-import` | `eslint-plugin-import-x` | 🛠️ WIP 🛠️ Adds import-related rules |
+| `flat/addon-import-esm` | `eslint-plugin-import-x` | 🛠️ WIP 🛠️ ESM-style import modules |
 
 ## Customizing Rules
 
