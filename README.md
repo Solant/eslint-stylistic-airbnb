@@ -5,22 +5,6 @@
 
 A modern Airbnb ESLint config with the original formatting rules using [ESLint Stylistic](https://eslint.style/).
 
-## Table of Contents
-
-- [Features](#features)
-- [Why](#why)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Quickstart](#quickstart)
-- [Configuration Reference](#configuration-reference)
-- [Customizing Rules](#customizing-rules)
-- [TypeScript Support](#typescript-support)
-- [Migration Guide](#migration-guide)
-- [Troubleshooting](#troubleshooting)
-- [FAQ](#faq)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 ✨ **Modern & Maintained** - Updated for ESLint 9+ with no deprecated rules or plugins
@@ -69,18 +53,13 @@ pnpm add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 # yarn
 yarn add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 ```
+## Usage
 
-## Quickstart
+Just grab any of the ready to go presets:
 
-You can either use flat `eslint.config.js` (recommended) or legacy `.eslintrc` (in case you need it) configs.
+<details>
+<summary>JavaScript</summary>
 
-> ⚠️ **Important Note on Plugins**: You must explicitly include the recommended presets for any plugins you use.
->
-> The configs provided by this package (e.g., `flat/react`, `flat/vue`) only contain styling rules and Airbnb-specific overrides. They do not enable the core logic/linting rules of the underlying plugins.
-
-### Flat Config (ESLint 9+)
-
-**JavaScript:**
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -96,8 +75,11 @@ export default [
   },
 ];
 ```
+</details>
 
-**TypeScript:**
+<details>
+<summary>TypeScript</summary>
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -117,8 +99,11 @@ export default [
   },
 ];
 ```
+</details>
 
-**React + JavaScript:**
+<details>
+<summary>JavaScript + React</summary>
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -141,8 +126,11 @@ export default [
   },
 ];
 ```
+</details>
 
-**React + TypeScript:**
+<details>
+<summary>TypeScript + React</summary>
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -168,8 +156,11 @@ export default [
   },
 ];
 ```
+</details>
 
-**Vue + JavaScript:**
+<details>
+<summary>JavaScript + Vue</summary>
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -189,8 +180,11 @@ export default [
   }
 ];
 ```
+</details>
 
-**Vue + TypeScript:**
+<details>
+<summary>TypeScript + Vue</summary>
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -213,34 +207,79 @@ export default [
   },
 ];
 ```
+</details>
+
+
+### Customization
+
+Your config should include at least one **base** config:
+
+- `flat/recommended`
+- `flat/strict`
+- `flat/compat`
+
+```javascript
+// eslint.config.mjs
+import airbnb from 'eslint-stylistic-airbnb';
+import globals from 'globals';
+
+export default [
+  airbnb.configs['flat/recommended'],
+  
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
+];
+```
+
+And **any** number of additional configs, based on the framework, language and plugins that you use, for example:
+
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+import globals from 'globals';
+
+export default [
+  ...tseslint.configs.recommended,
+  react.configs.flat.recommended,
+  reactHooks.configs.recommended,
+
+  airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-typescript'],
+  airbnb.configs['flat/addon-jsx'],
+  airbnb.configs['flat/addon-react'],
+  
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
+];
+```
+> [!WARNING]
+> When building your own config file, always make sure to:
+> - Insert all airbnb configs after all other configs, but before any overrides
+> - Always use the at least the `recommended` preset for all plugins that you use
 
 ### Legacy Config (.eslintrc)
 
-**JavaScript:**
-```javascript
-// .eslintrc.js
-module.exports = {
-  extends: ['eslint-stylistic-airbnb/recommended'],
-};
-```
+The approach is the same, but the path to the config files is different:
 
-**React + JavaScript:**
 ```javascript
 // .eslintrc.js
 module.exports = {
-  extends: [
-    'eslint-stylistic-airbnb/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ['node_modules/eslint-stylistic-airbnb/configs/recommended'],
 };
 ```
 
 ## Configuration Reference
 
 ### Base configs
-
-Choose **one** of these as your foundation:
 
 |Config|Config ID (Legacy)|Best For|Description|
 |-|-|-|-|
