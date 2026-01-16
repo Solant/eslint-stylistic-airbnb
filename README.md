@@ -81,7 +81,10 @@ export default [
 </details>
 
 <details>
-<summary>TypeScript</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height="14px" width="14px" />
+    TypeScript
+</summary>
 
 ```javascript
 // eslint.config.js
@@ -105,7 +108,12 @@ export default [
 </details>
 
 <details>
-<summary>JavaScript + React</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height="14px" width="14px" />
+    JavaScript +
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" height="14px" width="14px" />
+    React
+</summary>
 
 ```javascript
 // eslint.config.js
@@ -132,7 +140,12 @@ export default [
 </details>
 
 <details>
-<summary>TypeScript + React</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height="14px" width="14px" />
+    TypeScript +
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" height="14px" width="14px" />
+    React
+</summary>
 
 ```javascript
 // eslint.config.js
@@ -162,7 +175,12 @@ export default [
 </details>
 
 <details>
-<summary>JavaScript + Vue</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height="14px" width="14px" />
+    JavaScript +
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" height="14px" width="14px" />
+    Vue
+</summary>
 
 ```javascript
 // eslint.config.js
@@ -186,7 +204,12 @@ export default [
 </details>
 
 <details>
-<summary>TypeScript + Vue</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height="14px" width="14px" />
+    TypeScript +
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" height="14px" width="14px" />
+    Vue
+</summary>
 
 ```javascript
 // eslint.config.js
