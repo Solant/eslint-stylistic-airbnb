@@ -58,7 +58,10 @@ yarn add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 Just grab any of the ready to go presets:
 
 <details>
-<summary>JavaScript</summary>
+<summary>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height="14px" width="14px" />
+    JavaScript
+</summary>
 
 ```javascript
 // eslint.config.js
