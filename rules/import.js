@@ -93,11 +93,14 @@ module.exports = {
         '**/protractor.conf.js', // protractor config
         '**/protractor.conf.*.js', // protractor config
         '**/karma.conf.js', // karma config
-        '**/.eslintrc.js', // eslint config
 
-        '**/uno.config.ts',
-        '**/vite.config.ts',
-        '**/tsdown.config.ts',
+        // eslint config
+        '**/.eslintrc.{js,mjs,ts}',
+        '**/eslint.config.{js,mjs,ts}',
+
+        '**/uno.config.{js,mjs,ts}',
+        '**/vite.config.{js,mjs,ts}',
+        '**/tsdown.config.{js,mjs,ts}',
       ],
       optionalDependencies: false,
     }],
