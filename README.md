@@ -3,41 +3,20 @@
 ![NPM Downloads](https://img.shields.io/npm/dm/eslint-stylistic-airbnb)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A modern Airbnb ESLint config with the original formatting rules using [ESLint Stylistic](https://eslint.style/).
-
-## Features
-
-✨ **Modern & Maintained** - Updated for ESLint 9+ with no deprecated rules or plugins
-
-🎨 **Formatting Included** - Uses [ESLint Stylistic](https://eslint.style/) instead of Prettier
-
-📦 **Multiple Formats** - Supports both flat config and legacy `.eslintrc`
-
-🔷 **TypeScript Ready** - Built-in TypeScript support
-
-⚛️ **Framework Support** - Dedicated configs for JSX-based frameworks, React and Vue.js
-
-🎯 **Flexible** - Choose from recommended, strict, or compatibility modes
-
-🔧 **Customizable** - Easy to override rules while maintaining the base style
+Airbnb-style ESLint config, updated for modern use with ESLint Stylistic formatting.
+Airbnb-style ESLint config, updated for modern use with [ESLint Stylistic](https://eslint.style/) formatting.
 
 ## Why
 
-The original `eslint-config-airbnb` is not updated for a long time now, has compatibility issues and uses deprecated rules and plugins. This config addresses all of them:
+The original `eslint-config-airbnb` is outdated. This config fixes that by:
 
-- All deprecated rules are replaced with an updated alternatives
-- All deprecated plugins removed or replaced with modern alternatives
-- Any ESLint >= 8.57 is supported (including ESLint 9 of course)
-- Both flat and legacy formats are supported
-- TypeScript support
-- Additional airbnb-inspired configs for other frameworks (JSX-based and Vue)
+- Replacing deprecated rules and plugins with modern alternatives.
+- Supporting ESLint >=8.57 (including v9).
+- Offering both flat and legacy config formats.
+- Adding TypeScript support.
+- Including Airbnb-inspired addons for JSX, React, and Vue.
 
-Big part of Airbnb codestyle are the formatting rules, so in order to follow airbnb codestyle as close as possible this config uses [ESLint Stylistic](https://eslint.style/) instead of `prettier`. Here is also a good article on this topic: [why not prettier](https://antfu.me/posts/why-not-prettier).
-
-## Prerequisites
-
-- Node.js >= 16.x
-- ESLint >= 8.57.0
+It uses [ESLint Stylistic](https://eslint.style/) instead of Prettier for formatting to match Airbnb's style closely.
 
 ## Installation
 
@@ -330,7 +309,7 @@ Make sure to include `addon-typescript` to prevent incorrect errors for [extensi
 
 ### Legacy Config (.eslintrc)
 
-The approach is the same, but the path to the config files is different:
+For older setups:
 
 ```javascript
 // .eslintrc.js
@@ -341,6 +320,8 @@ module.exports = {
   ],
 };
 ```
+
+Note: Prefer flat config for new projects—it's the future-proof choice.
 
 ## Configuration Reference
 
@@ -356,9 +337,9 @@ Base Airbnb styles. All deprecated rules have been removed or replaced with mode
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
 
-module.exports = {
+export default [
   airbnb.configs['flat/recommended'],
-};
+];
 ```
 </details>
 
@@ -372,9 +353,9 @@ Same as `flat/recommended` but with stricter rules that were not enabled in the 
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
 
-module.exports = {
+export default [
   airbnb.configs['flat/strict'],
-};
+];
 ```
 </details>
 
@@ -388,9 +369,9 @@ The original Airbnb config but without deprecated rules, for gradual migration p
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
 
-module.exports = {
+export default [
   airbnb.configs['flat/compat'],
-};
+];
 ```
 </details>
 
@@ -409,7 +390,7 @@ Install additional dependencies:
 npm install -D eslint-plugin-import-x
 
 #pnpm
-pnpm install -D eslint-plugin-import-x
+pnpm add -D eslint-plugin-import-x
 
 #yarn
 yarn add -D eslint-plugin-import-x
@@ -420,12 +401,12 @@ Update eslint config:
 import airbnb from 'eslint-stylistic-airbnb';
 import importX from 'eslint-plugin-import-x';
 
-module.exports = {
+export default [
   importX.configs['flat/recommended'],
   
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-import'],
-};
+];
 ```
 </details>
 
@@ -442,7 +423,7 @@ Install additional dependencies:
 npm install -D eslint-plugin-import-x
 
 #pnpm
-pnpm install -D eslint-plugin-import-x
+pnpm add -D eslint-plugin-import-x
 
 #yarn
 yarn add -D eslint-plugin-import-x
@@ -453,13 +434,13 @@ Update eslint config:
 import airbnb from 'eslint-stylistic-airbnb';
 import importX from 'eslint-plugin-import-x';
 
-module.exports = {
+export default [
   importX.configs['flat/recommended'],
   
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-import'],
   airbnb.configs['flat/addon-import-esm'],
-};
+];
 ```
 </details>
 
@@ -477,7 +458,7 @@ Install additional dependencies:
 npm install -D typescript-eslint
 
 #pnpm
-pnpm install -D typescript-eslint
+pnpm add -D typescript-eslint
 
 #yarn
 yarn add -D typescript-eslint
@@ -488,12 +469,12 @@ Update eslint config:
 import airbnb from 'eslint-stylistic-airbnb';
 import tseslint from 'typescript-eslint';
 
-module.exports = {
+export default [
   ...tseslint.configs['flat/recommended'],
 
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-typescript'],
-};
+];
 ```
 </details>
 
@@ -507,10 +488,10 @@ Allows `for...of` loops. Still disallows `for...in`, `with` statements, and labe
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
 
-module.exports = {
+export default [
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-iterators'],
-};
+];
 ```
 </details>
 
@@ -524,16 +505,16 @@ Stylistic rules for `jsx` and `tsx` files.
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
 
-module.exports = {
+export default [
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-jsx'],
-};
+];
 ```
 </details>
 
 #### `flat/addon-react`
 
-React-specific rules. Use it together with `flat/addon-jsx`. Requires `eslint-plugin-react` (hard requirement) and `eslint-plugin-react-hooks` (is not required, but you definetely need it).
+React-specific rules. Pair with `flat/addon-jsx`. Requires `eslint-plugin-react` (must-have) and `eslint-plugin-react-hooks` (highly recommended).
 
 <details>
 <summary>Usage:</summary>
@@ -543,27 +524,27 @@ Install additional dependencies:
 # npm
 npm install -D eslint-plugin-react eslint-plugin-react-hooks
 
-#pnpm
-pnpm install -D eslint-plugin-react eslint-plugin-react-hooks
+# pnpm
+pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
 
-#yarn
+# yarn
 yarn add -D eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 Update eslint config:
 ```javascript
 import airbnb from 'eslint-stylistic-airbnb';
-import react from 'eslint-config-react';
-import reactHooks from 'eslint-config-react-hooks';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
-module.exports = {
+export default [
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
   
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-jsx'],
   airbnb.configs['flat/addon-react'],
-};
+];
 ```
 </details>
 
@@ -580,7 +561,7 @@ Install additional dependencies:
 npm install -D eslint-plugin-vue
 
 #pnpm
-pnpm install -D eslint-plugin-vue
+pnpm add -D eslint-plugin-vue
 
 #yarn
 yarn add -D eslint-plugin-vue
@@ -591,7 +572,7 @@ Update eslint config:
 import airbnb from 'eslint-stylistic-airbnb';
 import pluginVue from 'eslint-plugin-vue';
 
-module.exports = [
+export default [
   ...pluginVue.configs['flat/recommended'],
 
   airbnb.configs['flat/recommended'],
@@ -613,7 +594,7 @@ Install additional dependencies:
 npm install -D typescript-eslint eslint-plugin-vue
 
 #pnpm
-pnpm install -D typescript-eslint eslint-plugin-vue
+pnpm add -D typescript-eslint eslint-plugin-vue
 
 #yarn
 yarn add -D typescript-eslint eslint-plugin-vue
@@ -625,7 +606,7 @@ import airbnb from 'eslint-stylistic-airbnb';
 import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
 
-module.exports = [
+export default [
   ...tseslint.configs['flat/recommended'],
   ...pluginVue.configs['flat/recommended'],
 
@@ -641,11 +622,11 @@ module.exports = [
 
 ### Conflicts with Prettier
 
-This config is designed to **replace** Prettier. If you have Prettier installed:
+This config replaces Prettier. If conflicts arise:
 
-1. Remove Prettier and related ESLint plugins
-2. Remove `.prettierrc` and `prettier.config.js`
-3. Update your IDE to use ESLint for formatting instead of Prettier
+- Remove Prettier, `eslint-config-prettier`, and `eslint-plugin-prettier`.
+- Delete `.prettierrc` or `prettier.config.js`.
+- Configure your editor to format with ESLint instead.
 
 ### Incorrect errors in TypeScript
 
@@ -683,23 +664,23 @@ No, all recommended rules are already included in the base airbnb config. You do
 
 ### From `eslint-config-airbnb`
 
-1. **Uninstall the old package:**
+1. Uninstall old packages:
    ```bash
    npm uninstall eslint-config-airbnb eslint-config-airbnb-base
    ```
 
-2. **Install this package** (see [Installation](#installation))
+2. Install this package (see [Installation](#installation)).
 
-3. **Update your config:**
-   - Flat config: Replace `airbnb` with `airbnb.configs['flat/recommended']`
-   - Legacy: Replace `'airbnb'` with `'eslint-stylistic-airbnb/recommended'`
+3. Update your config:
+   - Flat: Replace `airbnb` with `airbnb.configs['flat/recommended']`.
+   - Legacy: Replace `'airbnb'` with `'node_modules/eslint-stylistic-airbnb/configs/recommended'`.
 
-4. **Remove Prettier** (if using):
+4. Remove Prettier if using:
    ```bash
    npm uninstall prettier eslint-config-prettier eslint-plugin-prettier
    ```
 
-5. **Test and adjust** rules as needed
+5. Test and tweak rules as needed.
 
 ### From v2.x of this package
 
@@ -723,7 +704,7 @@ module.exports = {
 
 ## Contributing
 
-Contributions are welcome! Please open an issue first to discuss what you would like to change.
+Contributions welcome! Open an issue to discuss ideas first.
 
 ## License
 
@@ -731,5 +712,5 @@ Contributions are welcome! Please open an issue first to discuss what you would 
 
 ## Credits
 
-- Based on the original [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-- Uses [@stylistic/eslint-plugin](https://eslint.style/) for formatting rules
+- Original [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- Formatting via [@eslint/style](https://eslint.style/)
