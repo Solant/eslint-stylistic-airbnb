@@ -292,6 +292,23 @@ export default [
 > - Insert all airbnb configs after all other configs, but before any overrides
 > - Always use the at least the `recommended` preset for all plugins that you use
 
+You can edit any rules just like in any other ESLint config:
+
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+
+export default [
+  airbnb.configs['flat/recommended'],
+  {
+    rules: {
+      // Use 4 spaces instead of 2
+      '@stylistic/indent': ['error', 4],
+    },
+  },
+];
+```
+
 ### TypeScript
 
 All base styling rules are compatible with TypeScript out of the box, but you still need to configure the parser, the preferred way is to use `typescript-eslint` config.
@@ -620,42 +637,47 @@ module.exports = [
 ```
 </details>
 
-## Customizing Rules
+## Troubleshooting
 
-Customization works just like any other ESLint config:
+### Conflicts with Prettier
 
-**Flat Config:**
+This config is designed to **replace** Prettier. If you have Prettier installed:
+
+1. Remove Prettier and related ESLint plugins
+2. Remove `.prettierrc` and `prettier.config.js`
+3. Update your IDE to use ESLint for formatting instead of Prettier
+
+### Incorrect errors in TypeScript
+
+Make sure to add `addon-typescript`.
+
+### `no-undef` errors
+
+Make sure to specify globals via the `languageOptions.globals` property in your flat config. For example, to enable browser globals:
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
+import globals from 'globals';
 
 export default [
   airbnb.configs['flat/recommended'],
+  
   {
-    rules: {
-      '@stylistic/indent': ['error', 4], // Use 4 spaces instead of 2
-      'no-console': 'warn', // Warn instead of error
-      'max-len': ['error', { code: 120 }], // Increase line length
+    languageOptions: {
+      globals: globals.browser,
     },
   },
 ];
 ```
 
-**Legacy Config:**
-```javascript
-// .eslintrc.js
-module.exports = {
-  extends: [
-    'node_modules/eslint-stylistic-airbnb/configs/recommended',
-    'node_modules/eslint-stylistic-airbnb/configs/addon-jsx',
-  ],
-  rules: {
-    '@stylistic/indent': ['error', 4],
-    'no-console': 'warn',
-    'max-len': ['error', { code: 120 }],
-  },
-};
-```
+You can also combine multiple environments: `{ ...globals.browser, ...globals.node }`. See the [globals package](https://www.npmjs.com/package/globals) for available options.
+
+## FAQ
+
+### Do I need to use a `recommended` config from `@eslint/js`?
+
+No, all recommended rules are already included in the base airbnb config. You don't need to add `@eslint/js` recommended preset separately.
 
 ## Migration Guide
 
@@ -698,48 +720,6 @@ module.exports = {
   extends: ['node_modules/eslint-stylistic-airbnb/configs/compat'],
 };
 ```
-
-## Troubleshooting
-
-### Conflicts with Prettier
-
-This config is designed to **replace** Prettier. If you have Prettier installed:
-
-1. Remove Prettier and related ESLint plugins
-2. Remove `.prettierrc` and `prettier.config.js`
-3. Update your IDE to use ESLint for formatting instead of Prettier
-
-### Incorrect errors in TypeScript
-
-Make sure to add `addon-typescript`.
-
-### `no-undef` errors
-
-Make sure to specify globals via the `languageOptions.globals` property in your flat config. For example, to enable browser globals:
-
-```javascript
-// eslint.config.js
-import airbnb from 'eslint-stylistic-airbnb';
-import globals from 'globals';
-
-export default [
-  airbnb.configs['flat/recommended'],
-  
-  {
-    languageOptions: {
-      globals: globals.browser,
-    },
-  },
-];
-```
-
-You can also combine multiple environments: `{ ...globals.browser, ...globals.node }`. See the [globals package](https://www.npmjs.com/package/globals) for available options.
-
-## FAQ
-
-### Do I need to use a `recommended` config from `@eslint/js`?
-
-No, all recommended rules are already included in the base airbnb config. You don't need to add `@eslint/js` recommended preset separately.
 
 ## Contributing
 
