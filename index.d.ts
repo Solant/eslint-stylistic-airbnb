@@ -5,6 +5,14 @@ declare const airbnb: {
     compat: Linter.LegacyConfig,
     recommended: Linter.LegacyConfig,
     strict: Linter.LegacyConfig,
+    'addon-iterators': Linter.LegacyConfig,
+    'addon-jsx': Linter.LegacyConfig,
+    'addon-react': Linter.LegacyConfig,
+    'addon-vue': Linter.LegacyConfig,
+    'addon-vue-ts': Linter.LegacyConfig,
+    'addon-import': Linter.LegacyConfig,
+    'addon-import-ts': Linter.LegacyConfig,
+    'addon-typescript': Linter.LegacyConfig,
     'flat/compat': Linter.Config;
     'flat/recommended': Linter.Config;
     'flat/strict': Linter.Config;
