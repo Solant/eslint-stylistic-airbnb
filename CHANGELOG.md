@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v3.0.0-rc.3
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0-rc.2...v3.0.0-rc.3)
+
+### 🚀 Enhancements
+
+- Update rules for import addon ([264c6be](https://github.com/Solant/eslint-stylistic-airbnb/commit/264c6be))
+- Addon legacy configs ([20d3688](https://github.com/Solant/eslint-stylistic-airbnb/commit/20d3688))
+
+### 🩹 Fixes
+
+- Remove options that require type information from typescript-eslint parser ([4b0a449](https://github.com/Solant/eslint-stylistic-airbnb/commit/4b0a449))
+- Ignore `import-x/no-extraneous-dependencies` rule for eslint config ([739f9dc](https://github.com/Solant/eslint-stylistic-airbnb/commit/739f9dc))
+
+### 📖 Documentation
+
+- Restructore README documentation ([#3](https://github.com/Solant/eslint-stylistic-airbnb/pull/3))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.0.0-rc.2
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0-rc.1...v3.0.0-rc.2)
