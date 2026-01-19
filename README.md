@@ -4,7 +4,6 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Airbnb-style ESLint config, updated for modern use with ESLint Stylistic formatting.
-Airbnb-style ESLint config, updated for modern use with [ESLint Stylistic](https://eslint.style/) formatting.
 
 ## Why
 
