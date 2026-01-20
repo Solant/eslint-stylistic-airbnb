@@ -314,8 +314,8 @@ For older setups:
 // .eslintrc.js
 module.exports = {
   extends: [
-    'node_modules/eslint-stylistic-airbnb/configs/recommended',
-    'node_modules/eslint-stylistic-airbnb/configs/addon-jsx',
+    './node_modules/eslint-stylistic-airbnb/configs/recommended',
+    './node_modules/eslint-stylistic-airbnb/configs/addon-jsx',
   ],
 };
 ```
@@ -665,21 +665,25 @@ No, all recommended rules are already included in the base airbnb config. You do
 
 1. Uninstall old packages:
    ```bash
-   npm uninstall eslint-config-airbnb eslint-config-airbnb-base
+   npm uninstall eslint-config-airbnb eslint-config-airbnb-base eslint-config-airbnb-typescript
    ```
 
 2. Install this package (see [Installation](#installation)).
 
 3. Update your config:
-   - Flat: Replace `airbnb` with `airbnb.configs['flat/recommended']`.
-   - Legacy: Replace `'airbnb'` with `'node_modules/eslint-stylistic-airbnb/configs/recommended'`.
+   - Replace `'airbnb'` in the extends array with `'./node_modules/eslint-stylistic-airbnb/configs/recommended'` (or `compat`, if you want to minimize the number of changes)
+   - Replace `'airbnb-typescript'` in the extends array with `'./node_modules/eslint-stylistic-airbnb/configs/addon-typescript'`
+   - Replace `'airbnb/hooks'` with `'plugin:react-hooks/recommended'`
 
 4. Remove Prettier if using:
    ```bash
    npm uninstall prettier eslint-config-prettier eslint-plugin-prettier
    ```
 
-5. Test and tweak rules as needed.
+5. Depending on the version of `eslint-config-airbnb` you might get different amount of changes. Tweak rules as needed.
+
+> [!WARNING]
+> If you occur an error like `TypeError: Cannot read properties of undefined (reading 'length')` in rule like `@stylistic/....` try downgrading the `@stylistic/eslint-plugin` package to version `2.1.0`.
 
 ### From v2.x of this package
 
@@ -697,7 +701,7 @@ export default [
 ```javascript
 // .eslintrc.js (legacy config)
 module.exports = {
-  extends: ['node_modules/eslint-stylistic-airbnb/configs/compat'],
+  extends: ['./node_modules/eslint-stylistic-airbnb/configs/compat'],
 };
 ```
 
