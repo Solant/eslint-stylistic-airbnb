@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v3.0.1
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0...v3.0.1)
+
+### 🤖 CI
+
+- Use latest pnpm 10 for publish action ([acb6c3e](https://github.com/Solant/eslint-stylistic-airbnb/commit/acb6c3e))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.0.0
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0-rc.3...v3.0.0)
