@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v3.0.0
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0-rc.3...v3.0.0)
+
+### 🩹 Fixes
+
+- Remove missing module entries ([6078c8e](https://github.com/Solant/eslint-stylistic-airbnb/commit/6078c8e))
+
+### 📖 Documentation
+
+- Update migration guide ([83145cb](https://github.com/Solant/eslint-stylistic-airbnb/commit/83145cb))
+- Fix typos ([05b2f85](https://github.com/Solant/eslint-stylistic-airbnb/commit/05b2f85))
+
+### 🤖 CI
+
+- Enable tests ([d2fcea0](https://github.com/Solant/eslint-stylistic-airbnb/commit/d2fcea0))
+- Add publish action ([2d639df](https://github.com/Solant/eslint-stylistic-airbnb/commit/2d639df))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.0.0-rc.3
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0-rc.2...v3.0.0-rc.3)
