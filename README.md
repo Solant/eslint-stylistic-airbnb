@@ -33,7 +33,7 @@ yarn add -D eslint @stylistic/eslint-plugin eslint-stylistic-airbnb globals
 ```
 ## Usage
 
-Just grab any of the ready to go presets:
+Just grab any of the ready-to-go presets:
 
 <details>
 <summary>
@@ -267,8 +267,8 @@ export default [
 ```
 > [!WARNING]
 > When building your own config file, always make sure to:
-> - Insert all airbnb configs after all other configs, but before any overrides
-> - Always use the at least the `recommended` preset for all plugins that you use
+> - Insert all Airbnb configs after all other configs, but before any overrides
+> - Always use at least the `recommended` preset for all plugins that you use
 
 You can edit any rules just like in any other ESLint config:
 
@@ -289,7 +289,7 @@ export default [
 
 ### TypeScript
 
-All base styling rules are compatible with TypeScript out of the box, but you still need to configure the parser, the preferred way is to use `typescript-eslint` config.
+All base styling rules are compatible with TypeScript out of the box, but you still need to configure the parser. The preferred way is to use the `typescript-eslint` config.
 
 **Flat Config:**
 ```javascript
@@ -328,7 +328,7 @@ Note: Prefer flat config for new projects—it's the future-proof choice.
 
 #### `flat/recommended`
 
-Base Airbnb styles. All deprecated rules have been removed or replaced with modern alternatives. Some of the rules that was not enabled by default in the original Airbnb config due to semver versioning have been enabled.
+Base Airbnb styles. All deprecated rules have been removed or replaced with modern alternatives. Some of the rules that were not enabled by default in the original Airbnb config due to semver versioning have been enabled.
 
 <details>
 <summary>Usage:</summary>
@@ -344,7 +344,7 @@ export default [
 
 #### `flat/strict`
 
-Same as `flat/recommended` but with stricter rules that were not enabled in the original Airbnb config, but mentioned in the [Airbnb Style Guide](https://github.com/airbnb/javascript).
+Same as `flat/recommended` but with stricter rules that were not enabled in the original Airbnb config, though mentioned in the [Airbnb Style Guide](https://github.com/airbnb/javascript).
 
 <details>
 <summary>Usage:</summary>
@@ -388,10 +388,10 @@ Install additional dependencies:
 # npm
 npm install -D eslint-plugin-import-x
 
-#pnpm
+# pnpm
 pnpm add -D eslint-plugin-import-x
 
-#yarn
+# yarn
 yarn add -D eslint-plugin-import-x
 ```
 
@@ -421,10 +421,10 @@ Install additional dependencies:
 # npm
 npm install -D eslint-plugin-import-x
 
-#pnpm
+# pnpm
 pnpm add -D eslint-plugin-import-x
 
-#yarn
+# yarn
 yarn add -D eslint-plugin-import-x
 ```
 
@@ -445,7 +445,7 @@ export default [
 
 #### `flat/addon-typescript`
 
-Contains only Airbnb-specific replacements for `typescript-eslint` extension rules, all the base TypeScript styling is handled by the base config using ESlint Stylistic. Requires `typescript-eslint` to be installed. Should be always enabled if using TypeScript to prevent incorrect errors.
+Contains only Airbnb-specific replacements for `typescript-eslint` extension rules. All the base TypeScript styling is handled by the base config using ESLint Stylistic. Requires `typescript-eslint` to be installed. Should always be enabled if using TypeScript to prevent parser errors.
 
 
 <details>
@@ -456,10 +456,10 @@ Install additional dependencies:
 # npm
 npm install -D typescript-eslint
 
-#pnpm
+# pnpm
 pnpm add -D typescript-eslint
 
-#yarn
+# yarn
 yarn add -D typescript-eslint
 ```
 
@@ -549,7 +549,7 @@ export default [
 
 #### `flat/addon-vue`
 
-Stylistic rules for `.vue` files. Requires `eslint-plugin-vue`. Those rules are not part of Airbnb style guide, instead they are based on base and react-specific styleguide.
+Stylistic rules for `.vue` files. Requires `eslint-plugin-vue`. These rules are not part of the Airbnb style guide; instead, they are based on the base and React-specific style guides.
 
 <details>
 <summary>Usage:</summary>
@@ -559,10 +559,10 @@ Install additional dependencies:
 # npm
 npm install -D eslint-plugin-vue
 
-#pnpm
+# pnpm
 pnpm add -D eslint-plugin-vue
 
-#yarn
+# yarn
 yarn add -D eslint-plugin-vue
 ```
 
@@ -592,10 +592,10 @@ Install additional dependencies:
 # npm
 npm install -D typescript-eslint eslint-plugin-vue
 
-#pnpm
+# pnpm
 pnpm add -D typescript-eslint eslint-plugin-vue
 
-#yarn
+# yarn
 yarn add -D typescript-eslint eslint-plugin-vue
 ```
 
@@ -680,10 +680,10 @@ No, all recommended rules are already included in the base airbnb config. You do
    npm uninstall prettier eslint-config-prettier eslint-plugin-prettier
    ```
 
-5. Depending on the version of `eslint-config-airbnb` you might get different amount of changes. Tweak rules as needed.
+5. Depending on the version of `eslint-config-airbnb`, you might get a different number of changes. Tweak rules as needed.
 
 > [!WARNING]
-> If you occur an error like `TypeError: Cannot read properties of undefined (reading 'length')` in rule like `@stylistic/....` try downgrading the `@stylistic/eslint-plugin` package to version `2.1.0`.
+> If you encounter an error like `TypeError: Cannot read properties of undefined (reading 'length')` in rule like `@stylistic/....` try downgrading the `@stylistic/eslint-plugin` package to version `2.1.0`.
 
 ### From v2.x of this package
 
@@ -715,5 +715,5 @@ Contributions welcome! Open an issue to discuss ideas first.
 
 ## Credits
 
-- Original [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-- Formatting via [@eslint/style](https://eslint.style/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [ESLint Stylistic](https://eslint.style/)
