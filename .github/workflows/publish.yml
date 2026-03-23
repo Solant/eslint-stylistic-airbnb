@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
-      - run: pnpm isntall
+      - run: npm install -g pnpm@latest-10
+      - run: pnpm install
       - run: pnpm test
       - run: npm publish
