@@ -11,7 +11,6 @@ module.exports = {
     'addon-vue': require('./configs/addon-vue'),
     'addon-vue-ts': require('./configs/addon-vue-ts'),
     'addon-import': require('./configs/addon-import'),
-    'addon-import-ts': require('./configs/addon-import-ts'),
     'addon-typescript': require('./configs/addon-typescript'),
 
     'flat/compat': require('./configs/flat/compat'),
@@ -23,7 +22,6 @@ module.exports = {
     'flat/addon-vue': require('./configs/flat/addon-vue'),
     'flat/addon-vue-ts': require('./configs/flat/addon-vue-ts'),
     'flat/addon-import': require('./configs/flat/addon-import'),
-    'flat/addon-import-ts': require('./configs/flat/addon-import-ts'),
     'flat/addon-typescript': require('./configs/flat/addon-typescript'),
   },
 };
