@@ -11,8 +11,8 @@ declare const airbnb: {
     'addon-vue': Linter.LegacyConfig,
     'addon-vue-ts': Linter.LegacyConfig,
     'addon-import': Linter.LegacyConfig,
-    'addon-import-ts': Linter.LegacyConfig,
     'addon-typescript': Linter.LegacyConfig,
+
     'flat/compat': Linter.Config;
     'flat/recommended': Linter.Config;
     'flat/strict': Linter.Config;
@@ -22,7 +22,6 @@ declare const airbnb: {
     'flat/addon-vue': Linter.Config;
     'flat/addon-vue-ts': Linter.Config;
     'flat/addon-import': Linter.Config;
-    'flat/addon-import-ts': Linter.Config;
     'flat/addon-typescript': Linter.Config;
   };
 };
