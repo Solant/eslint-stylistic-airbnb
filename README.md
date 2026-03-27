@@ -203,6 +203,7 @@ export default [
   airbnb.configs['flat/recommended'],
   airbnb.configs['flat/addon-vue'],
   airbnb.configs['flat/addon-typescript'],
+  airbnb.configs['flat/addon-vue-ts'],
 
   {
     languageOptions: {
@@ -216,7 +217,7 @@ export default [
 
 ### Customization
 
-Your config should include at least one **base** config:
+Your config should include at least **one** base config:
 
 - `flat/recommended`
 - `flat/strict`
