@@ -47,6 +47,9 @@ import airbnb from 'eslint-stylistic-airbnb';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   airbnb.configs['flat/recommended'],
   
   {
@@ -71,6 +74,9 @@ import tseslint from 'typescript-eslint';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   ...tseslint.configs.recommended,
 
   airbnb.configs['flat/recommended'],
@@ -101,6 +107,9 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
 
@@ -134,6 +143,9 @@ import tseslint from 'typescript-eslint';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   ...tseslint.configs.recommended,
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
@@ -167,6 +179,9 @@ import pluginVue from 'eslint-plugin-vue';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   ...pluginVue.configs['flat/recommended'],
 
   airbnb.configs['flat/recommended'],
@@ -197,6 +212,9 @@ import tseslint from 'typescript-eslint';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
 
@@ -229,6 +247,9 @@ import airbnb from 'eslint-stylistic-airbnb';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   airbnb.configs['flat/recommended'],
   
   {
@@ -250,6 +271,9 @@ import tseslint from 'typescript-eslint';
 import globals from 'globals';
 
 export default [
+  // global ignores
+  { ignores: ['dist'] },
+
   ...tseslint.configs.recommended,
   react.configs.flat.recommended,
   reactHooks.configs.recommended,
