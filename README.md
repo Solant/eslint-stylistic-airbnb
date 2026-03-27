@@ -642,6 +642,17 @@ export default [
 ```
 </details>
 
+## IDE Configuration
+
+IDE might require additional configuration to apply proper formatting on save. You can use the guide from [@antfu/eslint-config](https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save) for VS Code, Zed, and Neovim. When applying those configs, make sure to:
+
+- **Use original plugin prefixes instead of [renamed](https://github.com/antfu/eslint-config?tab=readme-ov-file#plugins-renaming). Otherwise, format on save won't work properly.**
+- Remove unnecessary languages and rule groups
+
+## Formatting other file types (css, scss, html, and others)
+
+For files that are not supported by ESLint, use [eslint-plugin-format](https://github.com/antfu/eslint-plugin-format).
+
 ## Troubleshooting
 
 ### Conflicts with Prettier
