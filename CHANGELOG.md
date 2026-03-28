@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v3.0.2
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.1...v3.0.2)
+
+### 🩹 Fixes
+
+- Remove missing config type definitions ([4c3e05a](https://github.com/Solant/eslint-stylistic-airbnb/commit/4c3e05a))
+
+### 📖 Documentation
+
+- Add flat/addon-vue-ts config for vuejs+ts example ([2878501](https://github.com/Solant/eslint-stylistic-airbnb/commit/2878501))
+- Add global ignores config to templates ([707c609](https://github.com/Solant/eslint-stylistic-airbnb/commit/707c609))
+- Add IDE configuration and formatting sections ([06c0fd9](https://github.com/Solant/eslint-stylistic-airbnb/commit/06c0fd9))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.0.1
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.0...v3.0.1)

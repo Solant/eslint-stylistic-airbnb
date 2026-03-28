@@ -1,6 +1,6 @@
 {
   "name": "eslint-stylistic-airbnb",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Airbnb config for eslint using ESlint Stylistic formatting",
   "main": "index.js",
   "types": "./index.d.ts",
