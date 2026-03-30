@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v3.1.0
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.2...v3.1.0)
+
+### 🚀 Enhancements
+
+- Add peerDependenciesMeta for optional plugins ([#4](https://github.com/Solant/eslint-stylistic-airbnb/pull/4))
+- Add max-len rule exception for eslint-disable comments ([5a9f465](https://github.com/Solant/eslint-stylistic-airbnb/commit/5a9f465))
+
+### 📖 Documentation
+
+- Add reportUnusedDisableDirectives option ([d4da4cf](https://github.com/Solant/eslint-stylistic-airbnb/commit/d4da4cf))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.0.2
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.1...v3.0.2)
