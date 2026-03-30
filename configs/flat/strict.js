@@ -31,6 +31,17 @@ module.exports = {
       multilineDetection: "brackets",
     }],
 
+    // override max-len
+    '@stylistic/max-len': ['error', 100, 2, {
+      ignoreUrls: true,
+      ignoreComments: false,
+      // ignore long eslint-disable comments
+      ignorePattern: '^\\s*(\\/\\/|\\/\\*)\ eslint(-disable)?',
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+    }],
+
     // strict
     '@stylistic/multiline-ternary': ['error', 'never'],
     'func-style': ['error', 'expression'],

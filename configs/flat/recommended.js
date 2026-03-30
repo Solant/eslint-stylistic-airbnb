@@ -13,6 +13,17 @@ module.exports = {
     // base
     ...rules,
 
+    // override max-len
+    '@stylistic/max-len': ['error', 100, 2, {
+      ignoreUrls: true,
+      ignoreComments: false,
+      // ignore long eslint-disable comments
+      ignorePattern: '^\\s*(\\/\\/|\\/\\*)\ eslint(-disable)?',
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+    }],
+
     // recommended
     'prefer-object-has-own': 'error',
     'no-alert': 'error',
