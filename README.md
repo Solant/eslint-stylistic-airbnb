@@ -56,6 +56,9 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
   },
 ];
 ```
@@ -85,6 +88,9 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
   },
 ];
@@ -120,6 +126,9 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
   },
 ];
@@ -159,6 +168,9 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
   },
 ];
 ```
@@ -190,6 +202,9 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
   }
 ];
@@ -227,6 +242,9 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
   },
 ];
 ```
@@ -255,6 +273,9 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
   },
 ];
@@ -286,6 +307,9 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
   },
 ];
