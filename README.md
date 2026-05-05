@@ -668,10 +668,171 @@ export default [
 
 ## IDE Configuration
 
-IDE might require additional configuration to apply proper formatting on save. You can use the guide from [@antfu/eslint-config](https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save) for VS Code, Zed, and Neovim. When applying those configs, make sure to:
+> IDE configurations below are based on [**@antfu/eslint-config**](https://github.com/antfu/eslint-config), adapted for this project.
 
-- **Use original plugin prefixes instead of [renamed](https://github.com/antfu/eslint-config?tab=readme-ov-file#plugins-renaming). Otherwise, format on save won't work properly.**
-- Remove unnecessary languages and rule groups
+<details>
+<summary>VS Code</summary>
+
+Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+Add the following settings to your `.vscode/settings.json`:
+
+```jsonc
+{
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in your IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "@stylistic/*", "severity": "off", "fixable": true },
+    { "rule": "*-indent", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-order", "severity": "off", "fixable": true },
+    { "rule": "*-dangle", "severity": "off", "fixable": true },
+    { "rule": "*-newline", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "*semi", "severity": "off", "fixable": true }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "json",
+    "jsonc"
+  ]
+}
+```
+
+</details>
+
+<details>
+<summary>Zed</summary>
+
+Add the following settings to your `.zed/settings.json`:
+
+```jsonc
+{
+  // Use ESLint's --fix:
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "formatter": [],
+  // Enable eslint for all supported languages
+  "languages": {
+    "HTML": {
+      "language_servers": ["...", "eslint"]
+    },
+    "JSON": {
+      "language_servers": ["...", "eslint"]
+    },
+    "JSONC": {
+      "language_servers": ["...", "eslint"]
+    }
+    // Add other languages as needed
+  },
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "workingDirectories": ["./"],
+
+        // Silent the stylistic rules in your IDE, but still auto fix them
+        "rulesCustomizations": [
+          { "rule": "@stylistic/*", "severity": "off", "fixable": true },
+          { "rule": "*-indent", "severity": "off", "fixable": true },
+          { "rule": "*-spacing", "severity": "off", "fixable": true },
+          { "rule": "*-spaces", "severity": "off", "fixable": true },
+          { "rule": "*-order", "severity": "off", "fixable": true },
+          { "rule": "*-dangle", "severity": "off", "fixable": true },
+          { "rule": "*-newline", "severity": "off", "fixable": true },
+          { "rule": "*quotes", "severity": "off", "fixable": true },
+          { "rule": "*semi", "severity": "off", "fixable": true }
+        ]
+      }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Neovim</summary>
+
+Update your configuration to use the following:
+
+```lua
+local customizations = {
+  { rule = '@stylistic/*', severity = 'off', fixable = true },
+  { rule = '*-indent', severity = 'off', fixable = true },
+  { rule = '*-spacing', severity = 'off', fixable = true },
+  { rule = '*-spaces', severity = 'off', fixable = true },
+  { rule = '*-order', severity = 'off', fixable = true },
+  { rule = '*-dangle', severity = 'off', fixable = true },
+  { rule = '*-newline', severity = 'off', fixable = true },
+  { rule = '*quotes', severity = 'off', fixable = true },
+  { rule = '*semi', severity = 'off', fixable = true },
+}
+
+local lspconfig = require('lspconfig')
+-- Enable eslint for all supported languages
+lspconfig.eslint.setup(
+  {
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+      "vue",
+      "html",
+      "json",
+      "jsonc",
+    },
+    settings = {
+      -- Silent the stylistic rules in your IDE, but still auto fix them
+      rulesCustomizations = customizations,
+    },
+  }
+)
+```
+
+### Neovim format on save
+
+There's few ways you can achieve format on save in neovim:
+
+- `nvim-lspconfig` has a `EslintFixAll` command predefined, you can create a autocmd to call this command after saving file.
+
+```lua
+lspconfig.eslint.setup({
+  --- ...
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
+```
+
+- Use [conform.nvim](https://github.com/stevearc/conform.nvim).
+- Use [none-ls](https://github.com/nvimtools/none-ls.nvim)
+- Use [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+</details>
 
 ## Formatting other file types (css, scss, html, and others)
 
@@ -777,3 +938,4 @@ Contributions welcome! Open an issue to discuss ideas first.
 
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [ESLint Stylistic](https://eslint.style/)
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config)
