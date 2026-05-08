@@ -13,6 +13,7 @@ The original `eslint-config-airbnb` is outdated. This config fixes that by:
 - Supporting ESLint >=8.57 (including v9).
 - Offering both flat and legacy config formats.
 - Adding TypeScript support.
+- Adding support for other file types like CSS, SASS, SCSS and so on.
 - Including Airbnb-inspired addons for JSX, React, and Vue.
 
 It uses [ESLint Stylistic](https://eslint.style/) instead of Prettier for formatting to match Airbnb's style closely.
@@ -836,7 +837,178 @@ lspconfig.eslint.setup({
 
 ## Formatting other file types (css, scss, html, and others)
 
-For files that are not supported by ESLint, use [eslint-plugin-format](https://github.com/antfu/eslint-plugin-format).
+This config supports formatting of CSS and other non-JS file types using [eslint-plugin-format](https://github.com/antfu/eslint-plugin-format), which wraps external formatters like [oxfmt](https://github.com/oxc-project/oxc).
+
+<details>
+<summary>Usage:</summary>
+
+Install additional dependencies (this example uses `oxfmt`, but you can choose any formatter supported by `eslint-plugin-format`):
+
+```bash
+# npm
+npm install -D eslint-plugin-format oxfmt
+
+# pnpm
+pnpm add -D eslint-plugin-format oxfmt
+
+# yarn
+yarn add -D eslint-plugin-format oxfmt
+```
+
+Update eslint config:
+
+```javascript
+// eslint.config.js
+import format from 'eslint-plugin-format';
+
+export default [
+  { ignores: ['dist'] },
+
+  airbnb.configs['flat/recommended'],
+
+  // Format standalone styling files
+  {
+    files: ['**/*.{css,scss}'],
+    languageOptions: {
+      parser: format.parserPlain,
+    },
+    plugins: { format },
+    rules: {
+      // format using oxfmt
+      'format/oxfmt': ['error'],
+      // format using dprint
+      // 'format/dprint': ['error'],
+      // format using prettier
+      // 'format/prettier': ['error'],
+    },
+  },
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
+  },
+];
+```
+
+</details>
+
+<details>
+<summary>Usage with Vue SFC blocks:</summary>
+
+Vue SFC blocks require additional processing to extract blocks for formatting. Install additional dependencies:
+
+```bash
+pnpm add -D eslint-plugin-format oxfmt eslint-merge-processors eslint-processor-vue-blocks
+```
+
+Update eslint config:
+```javascript
+// eslint.config.js
+import format from 'eslint-plugin-format';
+import { mergeProcessors } from 'eslint-merge-processors';
+import processorVueBlocks from 'eslint-processor-vue-blocks';
+
+export default [
+  { ignores: ['dist'] },
+
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+
+  airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-vue'],
+  airbnb.configs['flat/addon-typescript'],
+  airbnb.configs['flat/addon-vue-ts'],
+
+  // Extract <style> blocks from .vue files for formatting
+  {
+    files: ['**/*.vue'],
+    processor: mergeProcessors([
+      pluginVue.processors['.vue'],
+      processorVueBlocks({ blocks: { styles: true } }),
+    ]),
+  },
+
+  // Format standalone styling files
+  {
+    files: ['**/*.{css,scss}'],
+    languageOptions: {
+      parser: format.parserPlain,
+    },
+    plugins: { format },
+    rules: {
+      'format/oxfmt': ['error'],
+    },
+  },
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
+  },
+];
+```
+
+Update eslint config:
+```javascript
+// eslint.config.js
+import airbnb from 'eslint-stylistic-airbnb';
+import pluginVue from 'eslint-plugin-vue';
+import tseslint from 'typescript-eslint';
+import globals from 'globals';
+import format from 'eslint-plugin-format';
+import { mergeProcessors } from 'eslint-merge-processors';
+import processorVueBlocks from 'eslint-processor-vue-blocks';
+
+export default [
+  { ignores: ['dist'] },
+
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+
+  airbnb.configs['flat/recommended'],
+  airbnb.configs['flat/addon-vue'],
+  airbnb.configs['flat/addon-typescript'],
+  airbnb.configs['flat/addon-vue-ts'],
+
+  // Extract <style> blocks from .vue files for formatting
+  {
+    files: ['**/*.vue'],
+    processor: mergeProcessors([
+      pluginVue.processors['.vue'],
+      processorVueBlocks({ blocks: { styles: true } }),
+    ]),
+  },
+
+  // Format standalone CSS files
+  {
+    files: ['**/*.css'],
+    languageOptions: {
+      parser: format.parserPlain,
+    },
+    plugins: { format },
+    rules: {
+      'format/oxfmt': ['error'],
+    },
+  },
+
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
+    },
+  },
+];
+```
+</details>
 
 ## Troubleshooting
 
