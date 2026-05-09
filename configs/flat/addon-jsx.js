@@ -25,8 +25,6 @@ module.exports = {
       prop: 'parens-new-line',
     }],
     '@stylistic/jsx-self-closing-comp': 'error',
-    // deprecated, but still needed for a proper formatting
-    '@stylistic/jsx-indent': ['error', 2],
     '@stylistic/jsx-indent-props': ['error', 2],
     '@stylistic/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
     '@stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
