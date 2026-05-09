@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v3.1.1
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.1.0...v3.1.1)
+
+### 🩹 Fixes
+
+- Replace deprecated jsx-indent rule with indent ([#9](https://github.com/Solant/eslint-stylistic-airbnb/pull/9))
+- Replace deprecated applyDefaultPatterns option ([#10](https://github.com/Solant/eslint-stylistic-airbnb/pull/10))
+
+### 📖 Documentation
+
+- Add IDE configurations ([#5](https://github.com/Solant/eslint-stylistic-airbnb/pull/5))
+- Add examples for eslint-plugin-format usage ([#6](https://github.com/Solant/eslint-stylistic-airbnb/pull/6))
+- Add additional dependencies for presets ([#7](https://github.com/Solant/eslint-stylistic-airbnb/pull/7))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.1.0
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.0.2...v3.1.0)
