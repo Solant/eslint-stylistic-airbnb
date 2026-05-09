@@ -71,6 +71,19 @@ export default [
     TypeScript
 </summary>
 
+Install additional dependencies:
+
+```bash
+# npm
+npm install -D typescript-eslint
+
+# pnpm
+pnpm add -D typescript-eslint
+
+# yarn
+yarn add -D typescript-eslint
+```
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -105,6 +118,19 @@ export default [
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" height="14px" width="14px" />
     React
 </summary>
+
+Install additional dependencies:
+
+```bash
+# npm
+npm install -D eslint-plugin-react eslint-plugin-react-hooks
+
+# pnpm
+pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
+
+# yarn
+yarn add -D eslint-plugin-react eslint-plugin-react-hooks
+```
 
 ```javascript
 // eslint.config.js
@@ -143,6 +169,19 @@ export default [
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" height="14px" width="14px" />
     React
 </summary>
+
+Install additional dependencies:
+
+```bash
+# npm
+npm install -D typescript-eslint eslint-plugin-react eslint-plugin-react-hooks
+
+# pnpm
+pnpm add -D typescript-eslint eslint-plugin-react eslint-plugin-react-hooks
+
+# yarn
+yarn add -D typescript-eslint eslint-plugin-react eslint-plugin-react-hooks
+```
 
 ```javascript
 // eslint.config.js
@@ -185,6 +224,19 @@ export default [
     Vue
 </summary>
 
+Install additional dependencies:
+
+```bash
+# npm
+npm install -D eslint-plugin-vue
+
+# pnpm
+pnpm add -D eslint-plugin-vue
+
+# yarn
+yarn add -D eslint-plugin-vue
+```
+
 ```javascript
 // eslint.config.js
 import airbnb from 'eslint-stylistic-airbnb';
@@ -219,6 +271,19 @@ export default [
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" height="14px" width="14px" />
     Vue
 </summary>
+
+Install additional dependencies:
+
+```bash
+# npm
+npm install -D typescript-eslint eslint-plugin-vue
+
+# pnpm
+pnpm add -D typescript-eslint eslint-plugin-vue
+
+# yarn
+yarn add -D typescript-eslint eslint-plugin-vue
+```
 
 ```javascript
 // eslint.config.js
