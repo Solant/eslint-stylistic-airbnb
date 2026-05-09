@@ -48,7 +48,7 @@ module.exports = {
     '@stylistic/line-comment-position': ['error', {
       position: 'above',
       ignorePattern: '',
-      applyDefaultPatterns: true,
+      applyDefaultIgnorePatterns: true,
     }],
   },
 }
