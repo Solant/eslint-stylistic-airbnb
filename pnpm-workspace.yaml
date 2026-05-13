@@ -1,3 +1,12 @@
+minimumReleaseAge: 4320
 packages:
-  - '.'
-  - 'tests'
+  - "."
+  - "tests"
+  - "tests-v10"
+catalog:
+  "@stylistic/eslint-plugin": "^5.9.0"
+  "eslint-plugin-react": "^7.37.5"
+  "eslint-plugin-vue": "^10.9.1"
+  "typescript-eslint": "^8.56.0"
+  "vue-eslint-parser": "^10.3.0"
+  "eslint-plugin-import-x": "^4.16.2"
