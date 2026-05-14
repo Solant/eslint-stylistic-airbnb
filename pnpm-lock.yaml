@@ -30,7 +30,7 @@ importers:
   .:
     dependencies:
       '@stylistic/eslint-plugin':
-        specifier: ^5.9.0
+        specifier: '>=2.0.0'
         version: 5.10.0(eslint@9.39.2)
       confusing-browser-globals:
         specifier: ^1.0.11
@@ -45,7 +45,7 @@ importers:
         specifier: ^7.36.1
         version: 7.37.5(eslint@9.39.2)
       eslint-plugin-vue:
-        specifier: ^10.9.1
+        specifier: ^10.6.0
         version: 10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@9.39.2))(@typescript-eslint/parser@8.59.2(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(vue-eslint-parser@10.4.0(eslint@9.39.2))
 
   tests:
