@@ -10,7 +10,7 @@ Airbnb-style ESLint config, updated for modern use with ESLint Stylistic formatt
 The original `eslint-config-airbnb` is outdated. This config fixes that by:
 
 - Replacing deprecated rules and plugins with modern alternatives.
-- Supporting ESLint >=8.57 (including v9).
+- Supporting ESLint 8.57+, 9, and 10 ([compatibility table](https://github.com/Solant/eslint-stylistic-airbnb/wiki/Plugin-compatibility-table)).
 - Offering both flat and legacy config formats.
 - Adding TypeScript support.
 - Adding support for other file types like CSS, SASS, SCSS and so on.
