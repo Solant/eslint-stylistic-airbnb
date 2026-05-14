@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v3.2.0
+
+[compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.1.1...v3.2.0)
+
+### 🚀 Enhancements
+
+- Update dependencies to support eslint 10 ([#13](https://github.com/Solant/eslint-stylistic-airbnb/pull/13))
+
+### 🤖 CI
+
+- Create test action ([#11](https://github.com/Solant/eslint-stylistic-airbnb/pull/11))
+- Pin versions for publish action, remove test and install actions ([#12](https://github.com/Solant/eslint-stylistic-airbnb/pull/12))
+
+### ❤️ Contributors
+
+- Solant <runner62v6@gmail.com>
+
 ## v3.1.1
 
 [compare changes](https://github.com/Solant/eslint-stylistic-airbnb/compare/v3.1.0...v3.1.1)
