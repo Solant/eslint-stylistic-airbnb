@@ -21,9 +21,6 @@ catalogs:
     typescript-eslint:
       specifier: ^8.56.0
       version: 8.59.2
-    vue-eslint-parser:
-      specifier: ^10.3.0
-      version: 10.4.0
 
 importers:
 
@@ -71,7 +68,7 @@ importers:
         version: 7.37.5(eslint@9.39.2)
       eslint-plugin-vue:
         specifier: 'catalog:'
-        version: 10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@9.39.2))(@typescript-eslint/parser@8.59.2(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(vue-eslint-parser@10.4.0(eslint@9.39.2))
+        version: 10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@9.39.2))(@typescript-eslint/parser@8.59.2(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(vue-eslint-parser@10.4.1(eslint@9.39.2))
       eslint-stylistic-airbnb:
         specifier: workspace:*
         version: link:..
@@ -86,7 +83,7 @@ importers:
         version: 8.59.2(eslint@9.39.2)(typescript@5.9.3)
       vue-eslint-parser:
         specifier: 'catalog:'
-        version: 10.4.0(eslint@9.39.2)
+        version: 10.4.1(eslint@9.39.2)
 
   tests-v10:
     dependencies:
@@ -111,7 +108,7 @@ importers:
         version: 7.37.5(eslint@10.3.0)
       eslint-plugin-vue:
         specifier: 'catalog:'
-        version: 10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@10.3.0))(@typescript-eslint/parser@8.59.2(eslint@10.3.0)(typescript@5.9.3))(eslint@10.3.0)(vue-eslint-parser@10.4.0(eslint@10.3.0))
+        version: 10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@10.3.0))(@typescript-eslint/parser@8.59.2(eslint@10.3.0)(typescript@5.9.3))(eslint@10.3.0)(vue-eslint-parser@10.4.1(eslint@10.3.0))
       eslint-stylistic-airbnb:
         specifier: workspace:*
         version: link:..
@@ -126,7 +123,7 @@ importers:
         version: 8.59.2(eslint@10.3.0)(typescript@5.9.3)
       vue-eslint-parser:
         specifier: 'catalog:'
-        version: 10.4.0(eslint@10.3.0)
+        version: 10.4.1(eslint@10.3.0)
 
 packages:
 
@@ -1522,6 +1519,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.2:
+    resolution: {integrity: sha512-c8jsqUZm3omBOI66G90z1Dyw5z622G8oLG+omfsHBJf3CWQTlOcwOjvOG6wtiNfW6anKm/eA39LMwMtMez2TiQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -1758,6 +1760,12 @@ packages:
 
   vue-eslint-parser@10.4.0:
     resolution: {integrity: sha512-Vxi9pJdbN3ZnVGLODVtZ7y4Y2kzAAE2Cm0CZ3ZDRvydVYxZ6VrnBhLikBsRS+dpwj4Jv4UCv21PTEwF5rQ9WXg==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+
+  vue-eslint-parser@10.4.1:
+    resolution: {integrity: sha512-Gk6gRDj0n/fkRa3C3l0bBheoBckUq/Rs0F/TvMWIS6nzzx67amAViMe9CkNgsP2tXyQONvGiHQESHwFtZ3aYDA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
@@ -2217,7 +2225,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.59.2
       debug: 4.4.3
       minimatch: 10.2.5
-      semver: 7.8.0
+      semver: 7.8.2
       tinyglobby: 0.2.15
       ts-api-utils: 2.5.0(typescript@5.9.3)
       typescript: 5.9.3
@@ -2778,7 +2786,7 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-vue@10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@10.3.0))(@typescript-eslint/parser@8.59.2(eslint@10.3.0)(typescript@5.9.3))(eslint@10.3.0)(vue-eslint-parser@10.4.0(eslint@10.3.0)):
+  eslint-plugin-vue@10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@10.3.0))(@typescript-eslint/parser@8.59.2(eslint@10.3.0)(typescript@5.9.3))(eslint@10.3.0)(vue-eslint-parser@10.4.1(eslint@10.3.0)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.3.0)
       eslint: 10.3.0
@@ -2786,7 +2794,7 @@ snapshots:
       nth-check: 2.1.1
       postcss-selector-parser: 7.1.1
       semver: 7.8.0
-      vue-eslint-parser: 10.4.0(eslint@10.3.0)
+      vue-eslint-parser: 10.4.1(eslint@10.3.0)
       xml-name-validator: 4.0.0
     optionalDependencies:
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.3.0)
@@ -2801,6 +2809,20 @@ snapshots:
       postcss-selector-parser: 7.1.1
       semver: 7.8.0
       vue-eslint-parser: 10.4.0(eslint@9.39.2)
+      xml-name-validator: 4.0.0
+    optionalDependencies:
+      '@stylistic/eslint-plugin': 5.10.0(eslint@9.39.2)
+      '@typescript-eslint/parser': 8.59.2(eslint@9.39.2)(typescript@5.9.3)
+
+  eslint-plugin-vue@10.9.1(@stylistic/eslint-plugin@5.10.0(eslint@9.39.2))(@typescript-eslint/parser@8.59.2(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(vue-eslint-parser@10.4.1(eslint@9.39.2)):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.2)
+      eslint: 9.39.2
+      natural-compare: 1.4.0
+      nth-check: 2.1.1
+      postcss-selector-parser: 7.1.1
+      semver: 7.8.0
+      vue-eslint-parser: 10.4.1(eslint@9.39.2)
       xml-name-validator: 4.0.0
     optionalDependencies:
       '@stylistic/eslint-plugin': 5.10.0(eslint@9.39.2)
@@ -3424,6 +3446,8 @@ snapshots:
 
   semver@7.8.0: {}
 
+  semver@7.8.2: {}
+
   set-function-length@1.2.2:
     dependencies:
       define-data-property: 1.1.4
@@ -3714,18 +3738,6 @@ snapshots:
       - tsx
       - yaml
 
-  vue-eslint-parser@10.4.0(eslint@10.3.0):
-    dependencies:
-      debug: 4.4.3
-      eslint: 10.3.0
-      eslint-scope: 9.1.2
-      eslint-visitor-keys: 5.0.1
-      espree: 11.2.0
-      esquery: 1.7.0
-      semver: 7.8.0
-    transitivePeerDependencies:
-      - supports-color
-
   vue-eslint-parser@10.4.0(eslint@9.39.2):
     dependencies:
       debug: 4.4.3
@@ -3735,6 +3747,30 @@ snapshots:
       espree: 11.2.0
       esquery: 1.7.0
       semver: 7.8.0
+    transitivePeerDependencies:
+      - supports-color
+
+  vue-eslint-parser@10.4.1(eslint@10.3.0):
+    dependencies:
+      debug: 4.4.3
+      eslint: 10.3.0
+      eslint-scope: 9.1.2
+      eslint-visitor-keys: 5.0.1
+      espree: 11.2.0
+      esquery: 1.7.0
+      semver: 7.8.2
+    transitivePeerDependencies:
+      - supports-color
+
+  vue-eslint-parser@10.4.1(eslint@9.39.2):
+    dependencies:
+      debug: 4.4.3
+      eslint: 9.39.2
+      eslint-scope: 9.1.2
+      eslint-visitor-keys: 5.0.1
+      espree: 11.2.0
+      esquery: 1.7.0
+      semver: 7.8.2
     transitivePeerDependencies:
       - supports-color
 
